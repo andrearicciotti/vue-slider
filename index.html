@@ -35,7 +35,7 @@
                 <div class="thumbs" v-on:mouseover="stopSlide" v-on:mouseleave="restartSlide" >
                     <div @click="prevSlide" class="prev"></div>
                     <div @click="nextSlide" class="next"></div>
-                    <div v-for="(object, index) in images" class="thumb" :class="(activeIndex === index) ? showClass : ''" @click="showThis">
+                    <div v-for="(object, index) in images" class="thumb" :class="(activeIndex === index) ? showClass : ''" @click="activeIndex = index">
                         <img :src="object.imagePath" :alt="object.title"/>
                 </div>
 

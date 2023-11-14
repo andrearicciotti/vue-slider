@@ -51,10 +51,6 @@ const app = createApp({
         restartSlide() {
             this.autoSlide = setInterval(this.nextSlide, 3000);
         },
-
-        showThis() {
-            (this.activeIndex === 0) ? this.activeIndex = this.images.length - 1 : this.activeIndex--;
-        }
     }
 })
 
