@@ -1,21 +1,3 @@
-:root {
-    --ms-: ;
-    --ms-: ;
-    --ms-: ;
-    --ms-: ;
-    --ms-: ;
-    --ms-: ;
-    --ms-: ;
-    --ms-: ;
-    --ms-: ;
-    --ms-: ;
-}
-
-/* COMMON */
-img {
-    max-width: 100%;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -23,32 +5,26 @@ img {
 }
 
 .container {
-    max-width: 900px;
     height: 100vh;
-    margin: 0 auto;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.items {
-    position: relative;
+.item {
+    float: left;
     width: 700px;
     height: 300px;
-}
-
-.item {
-    height: 100%;
-    display: none;
     position: relative;
+    display: none;
 }
 
-.text {
-    position: absolute;
-    right: 25px;
-    bottom: 50px;
-    font-size: 1.1rem;
-    color: white;
-    text-align: right;
+.item.active {
+    display : inline-block;
+    float: left;
+    width: 700px;
+    height: 300px;
+    position: relative;
 }
 
 .item img {
@@ -57,11 +33,16 @@ img {
     object-fit: cover;
 }
 
-.item.active {
-    display: block;
+.item .text {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    text-align: right;
+    color: white;
 }
 
 .thumbs {
+    float: left;
     height: 300px;
     background: #000;
     position: relative;
@@ -96,19 +77,20 @@ img {
     z-index: 999;
 }
 
-.prev {
-    top: 0;
-}
-
 .next {
     bottom: 0;
 }
 
+/*
+EXTRA: in questo esempio gli accordion vengono creati
+usando 2 bordi di un quadratino ruotato di 45 gradi
+In una versione base si possono usare delle icone
+oppure i caratteri ∧ (&and;) e ∨ (&or;)
+ */
 .prev::after {
     content: '';
     width: 10px;
     height: 10px;
-    transform: rotate(45deg);
     border-top: 1px solid black;
     border-right: 1px solid black;
     display: block;
@@ -122,7 +104,6 @@ img {
     content: '';
     width: 10px;
     height: 10px;
-    transform: rotate(45deg);
     border-top: 1px solid black;
     border-right: 1px solid black;
     display: block;
