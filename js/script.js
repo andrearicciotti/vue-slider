@@ -31,7 +31,8 @@ const app = createApp({
                 },
             ],
             showClass: "active",
-            activeIndex: 0
+            activeIndex: 0,
+            autoSlide: setInterval(this.nextSlide, 3000)
         };
     },
     methods: {
@@ -41,6 +42,9 @@ const app = createApp({
 
         prevSlide() {
             (this.activeIndex === 0) ? this.activeIndex = this.images.length - 1 : this.activeIndex--;
+        },
+        stopSlide() {
+            clearInterval(this.autoSlide);
         }
     }
 })

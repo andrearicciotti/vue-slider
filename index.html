@@ -33,6 +33,7 @@
                 </div>
 
                 <div class="thumbs">
+                    <div @click="stopSlide" class="stop-slide">&square;</div>
                     <div @click="prevSlide" class="prev"></div>
                     <div @click="nextSlide" class="next"></div>
                     <div v-for="(object, index) in images" class="thumb" :class="(activeIndex === index) ? showClass : ''">
