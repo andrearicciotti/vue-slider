@@ -19,7 +19,7 @@
 
     <div id="app">
 
-        <div class="container">
+        <div class="container" @keyup.up="clickUp" @keyup.down="clickDown">
             <div class="slider-wrapper" tabindex="0">
 
                 <div v-on:mouseover="stopSlide" v-on:mouseleave="restartSlide" v-for="(object, index) in images" class="item" :class="(activeIndex === index) ? showClass : ''">

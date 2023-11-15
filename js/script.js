@@ -51,6 +51,18 @@ const app = createApp({
         restartSlide() {
             this.autoSlide = setInterval(this.nextSlide, 3000);
         },
+
+        clickUp () {
+            this.prevSlide();
+            this.stopSlide();
+            this.restartSlide();
+        },
+
+        clickDown () {
+            this.nextSlide();
+            this.stopSlide();
+            this.restartSlide();
+        },
     }
 })
 
